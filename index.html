@@ -1,14 +1,26 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/aframevr/aframe/v0.4.0/dist/aframe-master.min.js"></script>
+    <script src="https://rawgit.com/takahirox/aframe-rain/master/build/aframe-rain.min.js"></script>
+
   </head>
   <body>
-    <a-scene stats>
-      <a-assets timeout="10000">
+    <a-scene rain>
+      <a-assets>
         <a-asset-item id="iceland" src="Assets/iceland_scene_for_canimatic/scene.gltf"></a-asset-item>
        </a-assets>
        <a-entity gltf-model="#iceland" ></a-entity>
-      <a-sky color="#ECECEC"></a-sky>
+       <a-entity position="0 0 10">
+        <a-camera></a-camera>
+      </a-entity>
+
+      <a-entity geometry="primitive:sphere"></a-entity>
+
+      <a-sky color="#222"></a-sky>
+  
+      <a-entity light="type:directional;color:#666" position="-10 -10 -10"></a-entity>
+
     </a-scene>
   </body>
 </html>
