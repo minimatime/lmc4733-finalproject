@@ -1,0 +1,11 @@
+Model Information:
+* title:	iceland scene for canimatic
+* source:	https://sketchfab.com/3d-models/iceland-scene-for-canimatic-36105320e882416e870c5f6ee8db2e6b
+* author:	m42345081 (https://sketchfab.com/m42345081)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "iceland scene for canimatic" (https://sketchfab.com/3d-models/iceland-scene-for-canimatic-36105320e882416e870c5f6ee8db2e6b) by m42345081 (https://sketchfab.com/m42345081) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
