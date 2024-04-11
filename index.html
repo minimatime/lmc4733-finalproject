@@ -3,10 +3,10 @@
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/aframevr/aframe/v0.4.0/dist/aframe-master.min.js"></script>
     <script src="https://rawgit.com/takahirox/aframe-rain/master/build/aframe-rain.min.js"></script>
-
+    <script src="./build/aframe-rain.js"></script>
   </head>
   <body>
-    <a-scene rain>
+    <a-scene stats>
       <a-assets>
         <a-asset-item id="iceland" src="Assets/iceland_scene_for_canimatic/scene.gltf"></a-asset-item>
        </a-assets>
@@ -20,7 +20,8 @@
       <a-sky color="#222"></a-sky>
   
       <a-entity light="type:directional;color:#666" position="-10 -10 -10"></a-entity>
-
+      <a-light type="ambient" color="#666"></a-light>
+      <a-light color="#668" distance="100" intensity="0.4" type="point"></a-light>
     </a-scene>
   </body>
 </html>
