@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <a-asset-item id="buildings" src="mobile_buildings/scene.gltf"></a-asset-item>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.4.0/dist/aframe-extras.min.js"></script>
+  </head>
+  <body>
+    
+    <a-scene cursor="rayOrigin: mouse">
+        
+      <a-plane color="#0e8bc9" position="0 .1 -10" height="110" width="10001" rotation="90 90 0" material="opacity:1" scale="2 5 2"></a-plane>
+      <a-entity position="-3 3 -40" color="#0e8bc9">
+      <a-ocean width="500" depth="50" density="400">
+        <a-animation attribute="visible" delay="25000" to="true"></a-animation>
+      </a-ocean>
+      </a-entity>
+  <a-plane color="#0e8bc9" position="0 .1 -10" height="110" width="10001" rotation="90 90 0" material="opacity:1" scale="2 5 2"></a-plane>
+  <a-entity position="-3 2.5 -40" color="#0e8bc9">
+  <a-ocean width="500" depth="50" density="400">
+    <a-animation attribute="visible" delay="25000" to="true"></a-animation>
+  </a-ocean>
+  </a-entity>
+  <a-plane color="#0e8bc9" position="0 .1 -10" height="11" width="10001" rotation="90 90 0" material="opacity:1" scale="2 3 2"></a-plane>
+  <a-entity position="-3 2 -40" color="#0e8bc9">
+  <a-ocean width="500" depth="50" density="400">
+    <a-animation attribute="visible" delay="25000" to="true"></a-animation>
+  </a-ocean>
+  </a-entity>
+  <a-plane color="#0e8bc9" position="0 .1 -10" height="110" width="10001" rotation="90 90 0" material="opacity:1" scale="2 5 2"></a-plane>
+  <a-entity position="-3 1.5 -40" color="#0e8bc9">
+  <a-ocean width="500" depth="50" density="400">
+    <a-animation attribute="visible" delay="25000" to="true"></a-animation>
+  </a-ocean>
+  </a-entity>
+  <a-plane color="#0e8bc9" position="0 .1 -10" height="110" width="10001" rotation="90 90 0" material="opacity:1" scale="2 5 2"></a-plane>
+  <a-entity position="-3 1 -40" color="#0e8bc9">
+  <a-ocean width="500" depth="50" density="400">
+    <a-animation attribute="visible" delay="25000" to="true"></a-animation>
+  </a-ocean>
+  </a-entity>
+  <a-plane color="#0e8bc9" position="0 .1 -10" height="110" width="10001" rotation="90 90 0" material="opacity:1" scale="2 5 2"></a-plane>
+  <a-entity position="-3 0.5 -40" color="#0e8bc9">
+  <a-ocean width="500" depth="50" density="400">
+    <a-animation attribute="visible" delay="25000" to="true"></a-animation>
+  </a-ocean>
+  </a-entity>
+  <a-plane color="#0e8bc9" position="0 .1 -10" height="110" width="10001" rotation="90 90 0" material="opacity:1" scale="2 5 2"></a-plane>
+  <a-entity position="-3 0.5 -40" color="#0e8bc9">
+  <a-ocean width="500" depth="50" density="400">
+    <a-animation attribute="visible" delay="25000" to="true"></a-animation>
+  </a-ocean>
+  </a-entity>
+  <a-plane color="#0e8bc9" position="0 .1 -10" height="110" width="10001" rotation="90 90 0" material="opacity:1" scale="2 5 2"></a-plane>
+  <a-entity position="-3 0 -40" color="#0e8bc9">
+  <a-ocean width="500" depth="50" density="400">
+    <a-animation attribute="visible" delay="25000" to="true"></a-animation>
+  </a-ocean>
+  </a-entity>
+  <a-text value="You are editor in chief at a newspaper agency. There's been a slow but steady drop in readership of young people. What headline do you write to try to address the rising sea level & coastline problem while also appealing to your readers?" 
+  scale=".5 .5 .5" position="-1 2.2 -2"></a-text>
+  <a-plane position="0.2 2.20 -2" color="#8d46cf" height = ".9px" width = "2.9px"></a-plane>
+
+  <a-text  link="href: good.html;" value="Encourage beachside resorts, rentals, and property owners to plant coastal-friendly vegetation and rocks around their property. Beautifying the coastal town will make vacations interesting for readers while protecting the coast." scale=".5 .5 .5" position="-4 1.2 -2"></a-text>
+  <a-plane link="href:good.html;" position="-2.8 1.20 -2" color="#8d46cf" height = ".9px" width = "2.6px"></a-plane>
+
+  <a-text  link="href: neutral.html;" value="Encourage your readers to stay in accommodations that are further away from the beach to save money and preserve the coastline." scale=".5 .5 .5" position="-1 1.2 -2"></a-text>
+  <a-plane link="href: neutral.html;" position="0.2 1.20 -2" color="#8d46cf" height = ".7px" width = "2.5px"></a-plane>
+
+  <a-text  link="href: bad.html;" value="Suggest that beaches should be closed for beach nourishment, where sand is deposited onto beaches." scale=".5 .5 .5" position="2 1.2 -2"></a-text>
+  <a-plane link="href: bad.html;" position="3 1.20 -2" color="#8d46cf" height = ".7px" width = "2.7px"></a-plane>
+
+  <a-entity gltf-model="#buildings" position = "0, 1.5, 70" scale="0.03 0.03 0.03" rotation="0 180 0"></a-entity>
+
+  <a-entity environment="preset: yavapai; groundColor: #cc9262; groundTexture: none; horizonColor: silver; skyColor: skyblue; dressingColor: #fcfcfc; shadow: true"></a-entity>
+</a-scene>
+</body>
+</html>
