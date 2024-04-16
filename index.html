@@ -3,21 +3,66 @@
   <head>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="dist/aframe-particle-system-component.min.js"></script>
-    <a-asset-item id="iceland" src="Assets/iceland_scene_for_canimatic/scene.gltf"></a-asset-item>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <!-- <script src="js/aframe.js"></script> -->
 
   </head>
   <body>
-    <a-scene stats>  
+    <a-scene stats>
+      <a-assets>
+        <a-asset-item id="iceland" src="Assets/iceland_scene_for_canimatic/scene.gltf"></a-asset-item>
+      </a-assets>
 
-      <a-entity position="0 2.25 -15" particle-system="preset: snow; particleCount: 5000"></a-entity>
-      <a-entity gltf-model="#iceland" ></a-entity>
+      <a-entity camera position="2 1 10" look-controls wasd-controls>
+        <a-entity cursor="fuse: true; fuseTimeout: 1000"
+                  position="0 0 -1"
+                  geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                  material="color: black; shader: flat">
+          <a-animation begin="click" easing="ease-in" attribute="scale"
+                       fill="backwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
+          <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale"
+                       fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
+        </a-entity>
+      </a-entity>
 
-      <a-entity geometry="primitive:sphere"></a-entity>
-      
-      <a-entity light="type: directional; color: #666; intensity: 0.5" position="-10 10 -10"></a-entity>
-      <a-light type="ambient" color="#666" intensity="1"></a-light>
-      <a-light type="point" color="#668" intensity="0.5" distance="30" decay="2" position="5 5 -5"></a-light>
-      <a-sky color="#222"></a-sky>
+      <a-entity id="neutral">
+        <!-- <a-entity position="0 2.25 -15" particle-system="preset: snow; particleCount: 5000"></a-entity> -->
+        <a-entity gltf-model="#iceland" position="0 0 -80"></a-entity>
+        <a-box color="red" position="-6 0 0" onclick="setSceneBad()"> </a-box>
+        <a-entity light="type: ambient; color: #BBB"></a-entity>
+        <a-entity light="type: directional; color: #FFF; intensity: 0.6" position="-0.5 1 1"></a-entity>
+        <a-sky color="#92D8FF"></a-sky>
+      </a-entity>
+
+      <a-entity id="bad" visible="false">
+        <a-entity position="0 2.25 -15" particle-system="preset: snow; particleCount: 5000"></a-entity>
+        <a-entity gltf-model="#iceland" position="0 0 -80"></a-entity>
+        <a-box color="blue" position="-6 0 0" onclick="setSceneNeutral()"> </a-box>
+        <a-entity light="type: directional; color: #666; intensity: 0.5" position="-10 10 -10"></a-entity>
+        <a-light type="ambient" color="#666" intensity="1"></a-light>
+        <a-light type="point" color="#668" intensity="0.5" distance="30" decay="2" position="5 5 -5"></a-light>
+        <a-sky color="#222"></a-sky>
+      </a-entity>
+
     </a-scene>
+
+    <script type="text/javascript"> 
+      function setSceneNeutral() {
+        console.log("Changing to neutral scene");
+        document.getElementById('bad').setAttribute('visible', 'false')
+        document.getElementById('neutral').setAttribute('visible', 'true')
+      }
+      function setSceneBad() {
+        console.log("Changing to bad scene");
+        document.getElementById('bad').setAttribute('visible', 'true')
+        document.getElementById('neutral').setAttribute('visible', 'false')
+        // document.getElementById('sceneStore').setAttribute('visible', 'false')
+        // document.getElementById('sceneMeeting').setAttribute('visible', 'false')
+        // document.getElementById('sceneHome').setAttribute('visible', 'false')
+      }
+     
+    </script>
+    
+
   </body>
 </html>
