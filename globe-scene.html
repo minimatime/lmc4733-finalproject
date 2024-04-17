@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A-Frame 3D Globe Component</title>
+    <meta name="description" content="3D Globe component.">
+    <!--AFrame version 1.2.0-->
+    <script src="https://unpkg.com/aframe"></script>
+    <!--Globe Component https://github.com/vasturiano/aframe-globe-component-->
+    <script src="https://unpkg.com/aframe-globe-component/dist/aframe-globe-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-text-component"></script>
+
+       <!--Orbit control based on ThreeJs OrbitControls-->
+  <!--https://github.com/tizzle/aframe-orbit-controls-component-->
+  <script src="https://cdn.rawgit.com/tizzle/aframe-orbit-controls-component/v0.1.14/dist/aframe-orbit-controls-component.min.js"></script>
+    <!--D3 Library https://d3js.org/-->
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <!--module to parse CSV and fetch data-->
+  <script src="https://d3js.org/d3-dsv.v2.min.js"></script>
+  <script src="https://d3js.org/d3-fetch.v2.min.js"></script>
+  <style>
+    body, html {
+      height: 100%; 
+      margin: 0;
+      overflow: hidden;
+    }
+    a-scene {
+      width: 100vw;
+      height: 100vh;
+      display: block;
+    }
+  </style>
+  </head>
+  <body>
+    <a-scene embedded>
+      <a-entity id="globeID" scale="0.1 0.1 0.1" globe="
+        globe-image-url: https://upload.wikimedia.org/wikipedia/commons/0/04/Solarsystemscope_texture_8k_earth_daymap.jpg;
+        bump-image-url: https://upload.wikimedia.org/wikipedia/commons/f/fb/Solarsystemscope_texture_8k_earth_normal_map.tif">
+      </a-entity>
+      <a-camera position="0 0 25"
+      orbit-controls="
+              target: #globeID;
+              enableDamping: true;
+              dampingFactor: 0.225;
+              rotateSpeed:0.05;
+              minDistance:2;
+              maxDistance:35;
+              "
+      >
+        <a-cursor color="lavender" opacity="0.5" raycaster="objects: .collidable"></a-cursor>
+      </a-camera>
+      <a-sky color="#001"></a-sky>
+      <a-plane position="0 -35 -31" width="65" height="10" color="red"></a-plane>
+
+  <!-- Text entity -->
+  <!-- Ensure it's positioned slightly in front of the red plane -->
+  <a-text value="Renewable Wins: Countries Thriving on Green Energy" color="white" position="0 -35 -30" align="center" width="60"></a-text>
+
+    </a-scene>
+    <script>
+      // Gen random data
+      const N = 300;
+      const gData = [...Array(N).keys()].map(() => ({
+        lat: (Math.random() - 0.5) * 180,
+        lng: (Math.random() - 0.5) * 360,
+        size: Math.random() / 15,
+        color: ['red'][Math.round(Math.random() * 3)]
+      }));
+  
+      const weightColor = d3.scaleSequentialLog().domain([11097, 1378665000]).range(["yellow", "red"]);
+
+      const globeEntity = document.getElementById('globeID');
+      globeEntity.setAttribute('globe', {
+        pointsData: gData,
+        pointAltitude: 'size',
+        pointColor: 'color'
+      });
+  </script>
+  </body>
+</html>
