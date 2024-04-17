@@ -1,0 +1,11 @@
+Model Information:
+* title:	Iceberg Inviorment
+* source:	https://sketchfab.com/3d-models/iceberg-inviorment-50e03494b17a4e5b91b737535ef31e98
+* author:	juliekglos (https://sketchfab.com/juliekglos)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Iceberg Inviorment" (https://sketchfab.com/3d-models/iceberg-inviorment-50e03494b17a4e5b91b737535ef31e98) by juliekglos (https://sketchfab.com/juliekglos) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
