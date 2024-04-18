@@ -45,12 +45,19 @@
   </style>
   <body>
     <a-scene stats>
+      <a-assets>
+        <a-asset-item id="office" src="Assets/office_desk/scene.gltf"></a-asset-item>
+      </a-assets>
+      <a-entity gltf-model="#office" position="0 -30 -80" scale="0.7 0.7 0.7"></a-entity>
       <div class="overlay-text">Butterfly Effect</div>
       <div class="button-container">
         <div class="overlay-button"><a href="yiwenGood.html">Good</a></div>
         <div class="overlay-button"><a href="yiwenNeutral.html">Neutral</a></div>
         <div class="overlay-button"><a href="yiwenBad.html">Bad</a></div>
       </div>
+      <a-entity light="type: ambient; color: #BBB"></a-entity>
+      <a-entity light="type: directional; color: #FFF; intensity: 0.6" position="-0.5 1 1"></a-entity>
+      <a-sky color="#D9D9D9"></a-sky>
     </a-scene>
     
 
