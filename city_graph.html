@@ -4,9 +4,47 @@
     <meta charset="utf-8">
     <title>A-Frame GLTF Model Example</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.1.0/dist/aframe-extras.min.js"></script>
 </head>
 <body>
+    <style>
+        .overlay-text {
+            position: fixed;
+            margin: 10%;
+            bottom: 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            padding: 10px 20px;
+            background-color: rgba(0,0,0,0.8);
+            border-radius: 5px;
+            z-index: 1;
+        }
+        .overlay-button {
+            position: fixed;
+            bottom: 3%;
+            left: 38%;
+            padding: 10px 20px;
+            color: white;
+            background-color: black;
+            border-color: green;
+            border-width: 3px;
+            border-style: outset;
+            border-radius: 5px;
+            font-size: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            z-index: 999;
+        }
+        .overlay-button:hover {
+            background-color: green;
+        }
+    </style>
+    
+    <div class="overlay-text">Good choice! Seeing other countries’ success with renewable energy encouraged people to pressure their governments to make legislative change, and the results are astounding.</div>
+    <a href="target.html" class="overlay-button">Return to the office</a>
+    
     <a-scene>
         <!-- Asset management system -->
         <a-assets>
@@ -22,8 +60,7 @@
 
         <!-- Camera with look-controls enabled and wasd-controls enabled for movement -->
         <a-camera position="60 60 350" look-controls="true" wasd-controls-enabled="true">
-            <!-- Static HUD image attached to the camera -->
-            <a-image src="#hudImage" position="1 -0.5 -1" rotation="0 0 0" scale="0.8 0.5 1"></a-image>
+            <a-image src="#hudImage" position="1 0.5 -1" rotation="0 0 0" scale="0.8 0.5 1"></a-image>
             <a-cursor color="lavender" opacity="0.5"></a-cursor>
         </a-camera>
     </a-scene>
