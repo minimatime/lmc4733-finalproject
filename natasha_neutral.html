@@ -15,6 +15,56 @@ init: function () {
      </script> -->
   </head>
   <body>
+    <style>
+      .overlay-text {
+          position: fixed;
+          margin: 10%;
+          bottom: 5%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          font-size: 20px;
+          padding: 10px 20px;
+          color: white;
+          background-color:black;
+          border: none;
+          border-radius: 5px;
+          z-index: 1;
+          background-color: rgba(0,0,0, .8);
+          background-blend-mode: lighten;
+      }
+      .overlay-button {
+          position: fixed;
+          bottom:3%;
+          left: 38%;
+          padding: 10px 20px;
+          color: white;
+          background-color:black;
+          border-color: green;
+
+          border-width: 3px;
+          border-style: outset;
+          border-radius: 5px;
+          font-size: 20px;
+          cursor: pointer;
+          text-decoration: none;
+          z-index: 999; /* Ensure it's above A-Frame canvas */
+      }
+      .overlay-button:hover {
+          background-color:green;
+      }
+      </style>
+    <a-entity id="rig" position="5.5 6.5 -23" rotation="0 170 0" >
+      <div class="overlay-text">April 24th. You wake up to the news that the mall- based in Bangladesh- has collapsed, leading to the largest and deadliest garment-factory disaster in history and deadliest industrial accident in the history of Bangladesh. The mall housed shops and banks in the lower floors and ran fast fashion manufacturing factories on the top floors, with thousands of workers working long hours for unlivable wages. More than 29 of the world’s biggest brands- including Walmart, KiK, Primer- sourced clothing and labor from this mall.
+
+        <br>Hundreds of people are reported dead or missing in the rubble. Your article begins a debate among the public and the government about building practices and the burden of fast fashion industries.
+      </div>
+      <div class="overlay-button">Check it out</div>
+    
+        <a-entity camera look-controls wasd-controls="acceleration:60" position="0 0 0"></a-entity>
+    
+      </a-entity>
     
     <a-scene>
       <!-- groundcolor for normal: 828282 -->
