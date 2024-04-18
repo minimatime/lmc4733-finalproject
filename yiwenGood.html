@@ -9,6 +9,60 @@
   </head>
   
   <body>
+    <style>
+      .overlay-text {
+          position: fixed;
+          margin: 10%;
+          bottom: 5%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          font-size: 20px;
+          padding: 10px 20px;
+          color: white;
+          background-color:black;
+          border: none;
+          border-radius: 5px;
+          z-index: 1;
+          background-color: rgba(0,0,0, .8);
+          background-blend-mode: lighten;
+      }
+      .overlay-button {
+          position: fixed;
+          bottom:3%;
+          left: 38%;
+          padding: 10px 20px;
+          color: white;
+          background-color:black;
+          border-color: green;
+
+          border-width: 3px;
+          border-style: outset;
+          border-radius: 5px;
+          font-size: 20px;
+          cursor: pointer;
+          text-decoration: none;
+          z-index: 999; /* Ensure it's above A-Frame canvas */
+      }
+      .overlay-button:hover {
+          background-color:green;
+      }
+      </style>
+    <a-entity id="rig" position="5.5 6.5 -23" rotation="0 170 0" >
+      <div class="overlay-text">Iceland's Green Triumph: Nation Achieves Milestone in Sustained Environmental Stability -- 
+        Due to your news article, there's a greater awareness of climate change among people.</div>
+      <div class="button"></div>
+    
+        <a-entity camera look-controls wasd-controls="acceleration:60" position="0 0 0"></a-entity>
+    
+      </a-entity>
+    <a-scene>
+    <a href="target.html" class="overlay-button">Return to the office</a>
+    </a-scene>
+      </a-entity>
+
+
     <a-scene>
       <a-assets>
         <a-asset-item id="iceland" src="Assets/iceland_scene_for_canimatic/scene.gltf"></a-asset-item>
@@ -42,9 +96,9 @@
         </a-entity>
       </a-entity>
 
-      <div class="overlay-text">The Butterfly Effect</div>
-      <div class="overlay-button"><a href="index.html">Go Back</a></div>
-
+      
+      
+      
     </a-scene>
   </body>
 </html>
