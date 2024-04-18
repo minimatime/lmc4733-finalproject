@@ -1,0 +1,100 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
+    <!-- <script>
+      AFRAME.registerComponent('log', {
+  schema: {type: 'string'},
+
+init: function () {
+  var stringToLog = this.data;
+  console.log(stringToLog);
+  console.log("girl wha");
+}
+});
+     </script> -->
+  </head>
+  <body>
+    <style>
+      .overlay-text {
+          position: fixed;
+          margin: 10%;
+          bottom: 5%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          font-size: 20px;
+          padding: 10px 20px;
+          color: white;
+          background-color:black;
+          border: none;
+          border-radius: 5px;
+          z-index: 1;
+          background-color: rgba(0,0,0, .8);
+          background-blend-mode: lighten;
+      }
+      .overlay-button {
+          position: fixed;
+          bottom:3%;
+          left: 38%;
+          padding: 10px 20px;
+          color: white;
+          background-color:black;
+          border-color: green;
+
+          border-width: 3px;
+          border-style: outset;
+          border-radius: 5px;
+          font-size: 20px;
+          cursor: pointer;
+          text-decoration: none;
+          z-index: 999; /* Ensure it's above A-Frame canvas */
+      }
+      .overlay-button:hover {
+          background-color:green;
+      }
+      </style>
+    <a-entity id="rig" position="5.5 6.5 -23" rotation="0 170 0" >
+      <div class="overlay-text">April 24th. You wake up to the news that the mall- based in Bangladesh- has collapsed, leading to the largest and deadliest garment-factory disaster in history and deadliest industrial accident in the history of Bangladesh. The mall housed shops and banks in the lower floors and ran fast fashion manufacturing factories on the top floors, with thousands of workers working long hours for unlivable wages. More than 29 of the world’s biggest brands- including Walmart, KiK, Primer- sourced clothing and labor from this mall.
+
+        <br>Luckily, due to your newspaper’s live reporting, the building was evacuated in the early hours of the morning.
+      </div>
+      <div class="overlay-button">Check it out</div>
+    
+        <a-entity camera look-controls wasd-controls="acceleration:60" position="0 0 0"></a-entity>
+    
+      </a-entity>
+    <a-scene>
+      <!-- groundcolor for normal: 828282 -->
+        <a-entity environment="preset: default; groundColor: #828282; groundTexture: walkernoise; fog: 0;"></a-entity>
+        <a-assets>
+          <a-asset-item id="industrial" src="old_industrial_building/scene.gltf"></a-asset-item>
+          <a-asset-item id="marketplace" src="arabian_market/scene.gltf"></a-asset-item>
+          <a-asset-item id="debris" src="heap_of_construction_debris_bricks.glb"></a-asset-item>
+         </a-assets>
+
+         <a-camera>
+          <!-- <a-cursor></a-cursor> -->
+         </a-camera>
+         
+         <!-- x, y, z -> x goes to the side (left-right/sliding), y goes in the air (up-down), z is in your line of sight (front-back) -->
+         <a-entity gltf-model="#industrial" position = "0, 6.5, -10" scale="0.01 0.01 0.01" rotation="0 90 0" visible=true"></a-entity>
+         <!-- uncomment for the better scenarios -->
+         <a-entity gltf-model="#industrial" position = "0, 20, -10" scale="0.01 0.01 0.01" rotation="0 90 0" visible="true"></a-entity>
+         <a-entity gltf-model="#industrial" position = "0, 33.5, -10" scale="0.01 0.01 0.01" rotation="0 90 0" visible="true"></a-entity>
+         <a-entity gltf-model="#debris" position = "-9, -9, 0" scale="1 1 1" rotation="0 90 0"></a-entity>
+         <!-- <a-entity gltf-model="#debris" position = "-4, -9, 0" scale="1 1 1" rotation="0 90 0"></a-entity>
+         <a-entity gltf-model="#debris" position = "0, -47, 0" scale="5 5 5" rotation="0 90 0"></a-entity>
+         <a-entity gltf-model="#debris" position = "4, -9, 0" scale="1 1 1" rotation="0 90 0"></a-entity> -->
+<!-- just some background settings, commented out for testing purposes -->
+         <a-entity gltf-model="#marketplace" position = "30, -0.45, 20" scale="5 5 5" rotation="0 0 0"></a-entity>
+         <a-entity gltf-model="#marketplace" position = "-30, -0.45, 20" scale="5 5 5" rotation="0 0 0"></a-entity>
+         <a-entity gltf-model="#marketplace" position = "-60, -0.45, 20" scale="5 5 5" rotation="0 0 0"></a-entity>
+
+         <a-entity gltf-model="#industrial" position = "30, 6.5, -30" scale="0.01 0.01 0.01" rotation="0 90 0"></a-entity>
+
+         <a-entity gltf-model="#industrial" position = "-30, 6.5, -30" scale="0.01 0.01 0.01" rotation="0 90 0"></a-entity>
+      </a-scene>
+  </body>
+</html>
