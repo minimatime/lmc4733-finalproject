@@ -6,9 +6,60 @@
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.4.0/dist/aframe-extras.min.js"></script>
   </head>
   <body>
+    <style>
+      .overlay-text {
+          position: fixed;
+          
+          
+          margin: 10%;
+          bottom: 5%;
+          display: flex;
+    justify-content: center;
+    align-items: center;
+          color: white;
+          font-size: 20px;
+          padding: 10px 20px;
+              color: white;
+              background-color:black;
+              border: none;
+              border-radius: 5px;
+          z-index: 1;
+          background-color: rgba(0,0,0, .8);
+          background-blend-mode: lighten;
+          
+          
+      }
+      .overlay-button {
+              position: fixed;
+              bottom:3%;
+              left: 38%;
+              padding: 10px 20px;
+              color: white;
+              background-color:black;
+              border-color: green;
+  
+              border-width: 3px;
+              border-style: outset;
+              border-radius: 5px;
+              font-size: 20px;
+              cursor: pointer;
+              text-decoration: none;
+              z-index: 999; /* Ensure it's above A-Frame canvas */
+          }
+          .overlay-button:hover {
+              background-color:green;
+          }
+      </style>
+    <a-entity id="rig" position="5.5 6.5 -23" rotation="0 170 0" >
+      <div class="overlay-text">Your readers are happy because your suggestion saved them money and this preserves the dunes on the beach, which prevents further damage. This does not better the current state, however.</div>
+      <div class="button"></div>
     
-    <a-scene>
-        
+        <a-entity camera look-controls wasd-controls="acceleration:60" position="0 0 0"></a-entity>
+    
+      </a-entity>
+    </a-scene>
+    <a href="target.html" class="overlay-button">Return to the office</a>
+      <a-scene>
       <a-plane color="#0e8bc9" position="0 .1 -10" height="110" width="10001" rotation="90 90 0" material="opacity:1" scale="2 5 2"></a-plane>
       <a-entity position="-3 3 -40" color="#0e8bc9">
       <a-ocean width="500" depth="50" density="400">
@@ -57,22 +108,11 @@
     <a-animation attribute="visible" delay="25000" to="true"></a-animation>
   </a-ocean>
   </a-entity>
-  <a-text value="You are editor in chief at a newspaper agency. There's been a slow but steady drop in readership of young people. What headline do you write to try to address the rising sea level & coastline problem while also appealing to your readers?" 
-  scale=".5 .5 .5" position="-1 2.2 -2"></a-text>
-  <a-plane position="0.2 2.20 -2" color="#8d46cf" height = ".9px" width = "2.9px"></a-plane>
-
-  <a-text  link="href: good.html;" value="Encourage beachside resorts, rentals, and property owners to plant coastal-friendly vegetation and rocks around their property. Beautifying the coastal town will make vacations interesting for readers while protecting the coast." scale=".5 .5 .5" position="-4 1.2 -2"></a-text>
-  <a-plane link="href:good.html;" position="-2.8 1.20 -2" color="#8d46cf" height = ".9px" width = "2.6px"></a-plane>
-
-  <a-text  link="href: neutral.html;" value="Encourage your readers to stay in accommodations that are further away from the beach to save money and preserve the coastline." scale=".5 .5 .5" position="-1 1.2 -2"></a-text>
-  <a-plane link="href: neutral.html;" position="0.2 1.20 -2" color="#8d46cf" height = ".7px" width = "2.5px"></a-plane>
-
-  <a-text  link="href: bad.html;" value="Suggest that beaches should be closed for beach nourishment, where sand is deposited onto beaches." scale=".5 .5 .5" position="2 1.2 -2"></a-text>
-  <a-plane link="href: bad.html;" position="3 1.20 -2" color="#8d46cf" height = ".7px" width = "2.7px"></a-plane>
 
   <a-entity gltf-model="#buildings" position = "0, 1.5, 70" scale="0.03 0.03 0.03" rotation="0 180 0"></a-entity>
 
   <a-entity environment="preset: yavapai; groundColor: #cc9262; groundTexture: none; horizonColor: silver; skyColor: skyblue; dressingColor: #fcfcfc; shadow: true"></a-entity>
-</a-scene>
-</body>
+    </a-scene>
+  </body>
 </html>
+

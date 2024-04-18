@@ -6,7 +6,61 @@
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.4.0/dist/aframe-extras.min.js"></script>
   </head>
   <body>
-  
+        <style>
+          .overlay-text {
+              position: fixed;
+              
+              
+              margin: 10%;
+              bottom: 5%;
+              display: flex;
+        justify-content: center;
+        align-items: center;
+              color: white;
+              font-size: 20px;
+              padding: 10px 20px;
+                  color: white;
+                  background-color:black;
+                  border: none;
+                  border-radius: 5px;
+              z-index: 1;
+              background-color: rgba(0,0,0, .8);
+              background-blend-mode: lighten;
+              
+              
+          }
+          .overlay-button {
+                  position: fixed;
+                  bottom:3%;
+                  left: 38%;
+                  padding: 10px 20px;
+                  color: white;
+                  background-color:black;
+                  border-color: green;
+      
+                  border-width: 3px;
+                  border-style: outset;
+                  border-radius: 5px;
+                  font-size: 20px;
+                  cursor: pointer;
+                  text-decoration: none;
+                  z-index: 999; /* Ensure it's above A-Frame canvas */
+              }
+              .overlay-button:hover {
+                  background-color:green;
+              }
+          </style>
+        <a-entity id="rig" position="5.5 6.5 -23" rotation="0 170 0" >
+          <div class="overlay-text">Uh-oh! Your readers are unhappy that the beaches are closed during spring break! The environment isn't too happy either, as beach nourishment is only a temporary solution. Maybe you can make for up it in the next article.</div>
+          <div class="button"></div>
+        
+            <a-entity camera look-controls wasd-controls="acceleration:60" position="0 0 0"></a-entity>
+        
+          </a-entity>
+        <a-scene>
+        <a href="target.html" class="overlay-button">Return to the office</a>
+        </a-scene>
+      </a-entity>
       <a-scene>
       <a-plane color="#0e8bc9" position="0 .1 -100" height="110" width="10001" rotation="90 90 0" material="opacity:1" scale="2 5 2"></a-plane>
       <a-entity position="-3 3 -50" color="#0e8bc9">
@@ -56,13 +110,6 @@
     <a-animation attribute="visible" delay="25000" to="true"></a-animation>
   </a-ocean>
   </a-entity>
-  <a-text value="Uh-oh! Your readers are unhappy that the beaches are closed during spring break! The environment isn't too happy either, as beach nourishment is only a temporary solution. Maybe you can make for up it in the next article." 
-  scale=".5 .5 .5" position="-1 2.2 -2"></a-text>
-  <a-plane position="0.2 2.20 -2" color="#8d46cf" height = ".9px" width = "2.9px"></a-plane>
-
-  <a-text value="Next" scale="1 1 1" position="-.08 1.2 -2"></a-text>
-  <a-plane position="0.2 1.20 -2" color="#8d46cf" height = ".7px" width = "1px"></a-plane>
-
   <a-entity gltf-model="#buildings" position = "0, 1.5, 70" scale="0.03 0.03 0.03" rotation="0 180 0"></a-entity>
 
   <a-entity environment="preset: yavapai; groundColor: #cc9262; groundTexture: none; horizonColor: silver; skyColor: skyblue; dressingColor: #fcfcfc; shadow: true"></a-entity>
