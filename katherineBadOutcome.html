@@ -54,22 +54,18 @@
   </a>
     <a-scene>
         <a-assets>
-            <a-asset-item id="highway" src="./mediumOutcome.glb"></a-asset-item>
-            <img id="sky" src="mediumSky.jpg">
+            <a-asset-item id="highway" src="./badOutcome.glb"></a-asset-item>
+            <img id="sky" src="smogsky.jpeg">
           </a-assets>
-          <a-entity environment="preset: yavapai; skyColor: #96D5D1; groud: hills; groundColor: #77776C; groundTexture: none  "></a-entity>
           
+          <a-entity environment="preset: yavapai; skyColor: #619599; horizonColor: #2C4345;  groud: hills; groundColor: #77776C; groundTexture: none  "></a-entity>         
 <a-entity light="type: ambient; color: #BBB; intensity: .3"></a-entity>
 <a-entity light="type: directional; color: #FFF; intensity: 0.1" position="0.7 10 -1"></a-entity>
 
           <a-entity gltf-model="#highway" scale="1.5 1.5 1.5" position="0 5 0"></a-entity>
-          <a-entity src="sky"></a-entity>
-
-
-        
-d
+     
         <a-entity id="rig" position="5.5 6.5 -23" rotation="0 170 0" >
-          <div class="overlay-text">Your article reaches an audience that mostly owns personal vehicles; they are not very interested in public transit but are on board with the EV movement. New chargers will start to be built and the 80% EV law is passed. While electric vehicles produce less emissions, the procedures required to build their batteries can be costly on the environment and people. Housing is torn down and replaced by chargers, and new battery factories use valuable land and resources.</div>
+          <div class="overlay-text">The community thinks that developing public transportation is a waste of their tax dollars; they also are worried about the environmental cost of developing EV infrastructure. With no reason to change their lifestyle, people continue to drive personal cars, rarely use public transit, and make sure that their elected officials do not push for any change in the transit sector. Emissions remain at a steady increase that results in poor air quality and harsh environmental conditions.</div>
           <div class="button"></div>
     
             <a-entity camera look-controls wasd-controls="acceleration:60" position="0 0 0"></a-entity>
