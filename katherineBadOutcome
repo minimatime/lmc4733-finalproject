@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-simple-sun-sky@^1.2.3/simple-sun-sky.js"></script>
+    <script src="https://unpkg.com/aframe-shader-buildings@^2.0.0/dist/main.js"></script>
+  </head>
+  <style>
+    .overlay-text {
+        position: fixed;
+        
+        
+        margin: 10%;
+        bottom: 5%;
+        display: flex;
+  justify-content: center;
+  align-items: center;
+        color: white;
+        font-size: 20px;
+        padding: 10px 20px;
+            color: white;
+            background-color:black;
+            border: none;
+            border-radius: 5px;
+        z-index: 1;
+        background-color: rgba(0,0,0, .8);
+        background-blend-mode: lighten;
+        
+        
+    }
+    .overlay-button {
+            position: fixed;
+            bottom:3%;
+            left: 38%;
+            padding: 10px 20px;
+            color: white;
+            background-color:black;
+            border-color: green;
+
+            border-width: 3px;
+            border-style: outset;
+            border-radius: 5px;
+            font-size: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            z-index: 999; /* Ensure it's above A-Frame canvas */
+        }
+        .overlay-button:hover {
+            background-color:green;
+        }
+</style>
+  <body>
+    
+  </a>
+    <a-scene>
+        <a-assets>
+            <a-asset-item id="highway" src="./badOutcome.glb"></a-asset-item>
+            <img id="sky" src="smogsky.jpeg">
+          </a-assets>
+          
+          <a-entity environment="preset: yavapai; skyColor: #619599; horizonColor: #2C4345;  groud: hills; groundColor: #77776C; groundTexture: none  "></a-entity>         
+<a-entity light="type: ambient; color: #BBB; intensity: .3"></a-entity>
+<a-entity light="type: directional; color: #FFF; intensity: 0.1" position="0.7 10 -1"></a-entity>
+
+          <a-entity gltf-model="#highway" scale="1.5 1.5 1.5" position="0 5 0"></a-entity>
+         
+
+
+        
+d
+        <a-entity id="rig" position="5.5 6.5 -23" rotation="0 170 0" >
+          <div class="overlay-text">The community thinks that developing public transportation is a waste of their tax dollars; they also are worried about the environmental cost of developing EV infrastructure. With no reason to change their lifestyle, people continue to drive personal cars, rarely use public transit, and make sure that their elected officials do not push for any change in the transit sector. Emissions remain at a steady increase that results in poor air quality and harsh environmental conditions.</div>
+          <div class="button"></div>
+    
+            <a-entity camera look-controls wasd-controls="acceleration:60" position="0 0 0"></a-entity>
+
+          </a-entity>
+    </a-scene>
+    <a href="target.html" class="overlay-button">Return to the office</a>
+  </body>
+</html>
