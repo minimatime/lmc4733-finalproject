@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="dist/aframe-particle-system-component.min.js"></script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <!-- <script src="js/aframe.js"></script> -->
+  </head>
+  <style>
+    .overlay-text {
+      position: fixed;
+      top: 10%; /* Adjusted for visual balance */
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 20px;
+      padding: 10px 20px;
+      background-color: rgba(0,0,0, 0.8);
+      border-radius: 5px;
+      z-index: 1;
+    }
+    .button-container {
+      position: fixed;
+      bottom: 3%;
+      left: 50%;
+      transform: translateX(-50%); /* Centers the container */
+      display: flex;
+      justify-content: center; /* Centers the buttons horizontally */
+      z-index: 999; /* High z-index to ensure visibility */
+    }
+    .overlay-button {
+      margin: 0 20px; /* Adds horizontal spacing between buttons */
+      padding: 10px 20px;
+      color: white;
+      background-color: black;
+      border: 3px outset green;
+      border-radius: 5px;
+      font-size: 20px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .overlay-button:hover {
+      background-color: green;
+    }
+  </style>
+  <body>
+    <a-scene stats>
+      <a-assets>
+        <a-asset-item id="office" src="Assets/office_desk/scene.gltf"></a-asset-item>
+      </a-assets>
+      <a-entity gltf-model="#office" position="0 -30 -80" scale="0.7 0.7 0.7"></a-entity>
+      <div class="overlay-text">Butterfly Effect</div>
+      <div class="button-container">
+        <div class="overlay-button"><a href="yiwenGood.html">Good</a></div>
+        <div class="overlay-button"><a href="yiwenNeutral.html">Neutral</a></div>
+        <div class="overlay-button"><a href="yiwenBad.html">Bad</a></div>
+      </div>
+      <a-entity light="type: ambient; color: #BBB"></a-entity>
+      <a-entity light="type: directional; color: #FFF; intensity: 0.6" position="-0.5 1 1"></a-entity>
+      <a-sky color="#D9D9D9"></a-sky>
+    </a-scene>
+    
+
+  </body>
+</html>

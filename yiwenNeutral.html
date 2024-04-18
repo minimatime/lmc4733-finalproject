@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="dist/aframe-particle-system-component.min.js"></script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <!-- <script src="js/aframe.js"></script> -->
+  </head>
+  <style>
+    .overlay-text {
+        position: fixed;
+        margin: 10%;
+        bottom: 5%;
+        display: flex;
+  justify-content: center;
+  align-items: center;
+        color: white;
+        font-size: 20px;
+        padding: 10px 20px;
+            color: white;
+            background-color:black;
+            border: none;
+            border-radius: 5px;
+        z-index: 1;
+        background-color: rgba(0,0,0, .8);
+        background-blend-mode: lighten;
+    }
+    .overlay-button {
+            position: fixed;
+            bottom:3%;
+            left: 38%;
+            padding: 10px 20px;
+            color: white;
+            background-color:black;
+            border-color: green;
+
+            border-width: 3px;
+            border-style: outset;
+            border-radius: 5px;
+            font-size: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            z-index: 999; /* Ensure it's above A-Frame canvas */
+        }
+        .overlay-button:hover {
+            background-color:green;
+    }
+</style>
+  <body>
+    <a-scene stats>
+      <a-assets>
+        <a-asset-item id="iceland" src="Assets/iceland_scene_for_canimatic/scene.gltf"></a-asset-item>
+        <a-asset-item id="cloud" src="Assets/clouds/scene.gltf"></a-asset-item>
+      </a-assets>
+
+      <a-entity id="neutral" visible="true">
+        <!-- <a-entity position="0 2.25 -15" particle-system="preset: snow; particleCount: 5000"></a-entity> -->
+        <a-entity gltf-model="#iceland" position="0 0 -80"></a-entity>
+        <a-entity gltf-model="Assets/clouds/scene.gltf" position="135.62875 128.68785 -371.14259" scale="0.3 0.3 0.3"></a-entity>
+        <a-entity gltf-model="Assets/clouds/scene.gltf" position="-50.25996 300 -290.44895" scale="0.3 0.3 0.3"></a-entity>
+        <a-entity gltf-model="Assets/clouds/scene.gltf" position="-375.72745 300 -138.71479" scale="0.3 0.3 0.3"></a-entity>
+        <a-entity gltf-model="#cloud" position="300 300 0" scale="0.5 0.5 0.5"></a-entity>
+        <a-entity gltf-model="#cloud" position="0 300 0" scale="0.3 0.3 0.3"></a-entity>
+        <a-entity gltf-model="#cloud" position="-300 300 0" scale="0.3 0.3 0.3"></a-entity>
+        <a-entity gltf-model="#cloud" position="400 200 300" scale="0.3 0.3 0.3"></a-entity>
+        <!-- <a-entity position="0 2.25 -15" particle-system="preset: rain"></a-entity> -->
+        <!-- <a-box color="red" position="-6 0 0" class="interactive" id="redBox"> </a-box> -->
+        <a-entity light="type: ambient; color: #BBB"></a-entity>
+        <a-entity light="type: directional; color: #FFF; intensity: 0.6" position="-0.5 1 1"></a-entity>
+        <a-sky color="#92D8FF"></a-sky>
+      </a-entity>
+
+      <div class="overlay-text"></div>
+      <div class="overlay-button"><a href="index.html">Go Back</a></div>
+
+    </a-scene>
+    
+
+  </body>
+</html>
