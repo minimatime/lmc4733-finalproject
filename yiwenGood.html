@@ -12,15 +12,15 @@
         margin: 10%;
         bottom: 5%;
         display: flex;
-  justify-content: center;
-  align-items: center;
+        justify-content: center;
+        align-items: center;
         color: white;
         font-size: 20px;
         padding: 10px 20px;
-            color: white;
-            background-color:black;
-            border: none;
-            border-radius: 5px;
+        color: white;
+        background-color:black;
+        border: none;
+        border-radius: 5px;
         z-index: 1;
         background-color: rgba(0,0,0, .8);
         background-blend-mode: lighten;
@@ -68,9 +68,10 @@
       <a-entity id="good">
         <a-entity>
           <!-- <a-entity position="0 2.25 -15" particle-system="preset: snow; particleCount: 5000"></a-entity> -->
-          <a-entity position="-6 0 0" particle-system="color: #0038FD,#44CC00"></a-entity>
-          <a-entity position="-3 0 0" particle-system="color: #EF0000,#44CC00"></a-entity>
-          <a-entity position="0 0 0" particle-system="color: #FD7900,#44CC00"></a-entity>
+          <a-entity position="-6 20 -30" particle-system="color: #0038FD,#44CC00"></a-entity>
+          <a-entity position="-3 20 -30" particle-system="color: #EF0000,#44CC00"></a-entity>
+          <a-entity position="0 20 -30" particle-system="color: #FD7900,#44CC00"></a-entity>
+          <a-entity text="value: Iceland’s Green Triumph; height: 50; width: 50" position="10 20 -30"></a-entity>
           <a-entity gltf-model="#iceland" position="0 0 -80"></a-entity>
           <!-- <a-box color="red" position="-6 0 0" class="interactive" id="redBox"> </a-box> -->
           <a-entity light="type: ambient; color: #BBB"></a-entity>
@@ -79,13 +80,8 @@
         </a-entity>
       </a-entity>
 
-      <a-entity id="rig">
-        <div class="overlay-text">The Butterfly Effect</div>
-        <div class="overlay-button"><a href="index.html">Go Back</a></div>
-  
-          <a-entity camera look-controls wasd-controls="acceleration:60" position="0 0 0"></a-entity>
-
-        </a-entity>
+      <div class="overlay-text">The Butterfly Effect</div>
+      <div class="overlay-button"><a href="index.html">Go Back</a></div>
 
     </a-scene>
   </body>
