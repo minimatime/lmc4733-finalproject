@@ -1,0 +1,11 @@
+Model Information:
+* title:	SEAWEED For my Game
+* source:	https://sketchfab.com/3d-models/seaweed-for-my-game-e12401a67c8a4efa81fc3c1d5ce81791
+* author:	LogNworld (https://sketchfab.com/Logan_velez)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "SEAWEED For my Game" (https://sketchfab.com/3d-models/seaweed-for-my-game-e12401a67c8a4efa81fc3c1d5ce81791) by LogNworld (https://sketchfab.com/Logan_velez) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
