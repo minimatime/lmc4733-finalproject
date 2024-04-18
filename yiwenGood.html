@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="dist/aframe-particle-system-component.min.js"></script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <!-- <script src="js/aframe.js"></script> -->
+  </head>
+  <style>
+    .overlay-text {
+        position: fixed;
+        margin: 10%;
+        bottom: 5%;
+        display: flex;
+  justify-content: center;
+  align-items: center;
+        color: white;
+        font-size: 20px;
+        padding: 10px 20px;
+            color: white;
+            background-color:black;
+            border: none;
+            border-radius: 5px;
+        z-index: 1;
+        background-color: rgba(0,0,0, .8);
+        background-blend-mode: lighten;
+    }
+    .overlay-button {
+            position: fixed;
+            bottom:3%;
+            left: 38%;
+            padding: 10px 20px;
+            color: white;
+            background-color:black;
+            border-color: green;
+
+            border-width: 3px;
+            border-style: outset;
+            border-radius: 5px;
+            font-size: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            z-index: 999; /* Ensure it's above A-Frame canvas */
+        }
+        .overlay-button:hover {
+            background-color:green;
+        }
+</style>
+  <body>
+    <a-scene stats>
+      <a-assets>
+        <a-asset-item id="iceland" src="Assets/iceland_scene_for_canimatic/scene.gltf"></a-asset-item>
+        <a-asset-item id="cloud" src="Assets/clouds/scene.gltf"></a-asset-item>
+      </a-assets>
+
+      <!-- <a-entity camera position="2 1 10" look-controls wasd-controls>
+        <a-cursor id="cursor"
+          position="0 0 -1"
+          geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;"
+          material="color: black; shader: flat"
+          raycaster="objects: .interactive; near: 0; far: 5"
+          cursor="fuse: true; fuseTimeout: 500"
+          event-set__enter="_event: mouseenter; color: springgreen"
+          event-set__leave="_event: mouseleave; color: black">
+        </a-cursor>
+      </a-entity> -->
+
+      <a-entity id="good">
+        <a-entity>
+          <!-- <a-entity position="0 2.25 -15" particle-system="preset: snow; particleCount: 5000"></a-entity> -->
+          <a-entity position="-6 0 0" particle-system="color: #0038FD,#44CC00"></a-entity>
+          <a-entity position="-3 0 0" particle-system="color: #EF0000,#44CC00"></a-entity>
+          <a-entity position="0 0 0" particle-system="color: #FD7900,#44CC00"></a-entity>
+          <a-entity gltf-model="#iceland" position="0 0 -80"></a-entity>
+          <!-- <a-box color="red" position="-6 0 0" class="interactive" id="redBox"> </a-box> -->
+          <a-entity light="type: ambient; color: #BBB"></a-entity>
+          <a-entity light="type: directional; color: #FFF; intensity: 0.6" position="-0.5 1 1"></a-entity>
+          <a-sky color="#92D8FF"></a-sky>
+        </a-entity>
+      </a-entity>
+
+      <a-entity id="rig">
+        <div class="overlay-text">The Butterfly Effect</div>
+        <div class="overlay-button"><a href="index.html">Go Back</a></div>
+  
+          <a-entity camera look-controls wasd-controls="acceleration:60" position="0 0 0"></a-entity>
+
+        </a-entity>
+
+    </a-scene>
+  </body>
+</html>

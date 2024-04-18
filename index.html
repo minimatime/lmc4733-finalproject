@@ -8,32 +8,39 @@
   </head>
   <style>
     .overlay-text {
-        position: fixed;
-        bottom: 10%;
-        left: 50%;
-        transform: translateX(-50%);
-        color: white;
-        font-size: 24px;
-        z-index: 1;
-        background-color: black
-        ;
+      position: fixed;
+      top: 10%; /* Adjusted for visual balance */
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 20px;
+      padding: 10px 20px;
+      background-color: rgba(0,0,0, 0.8);
+      border-radius: 5px;
+      z-index: 1;
+    }
+    .button-container {
+      position: fixed;
+      bottom: 3%;
+      left: 50%;
+      transform: translateX(-50%); /* Centers the container */
+      display: flex;
+      justify-content: center; /* Centers the buttons horizontally */
+      z-index: 999; /* High z-index to ensure visibility */
     }
     .overlay-button {
-      position: fixed;
-      bottom:3%;
-      left: 38%;
+      margin: 0 20px; /* Adds horizontal spacing between buttons */
       padding: 10px 20px;
       color: white;
-      background-color:black;
-      border: none;
+      background-color: black;
+      border: 3px outset green;
       border-radius: 5px;
       font-size: 20px;
       cursor: pointer;
       text-decoration: none;
-      z-index: 999; /* Ensure it's above A-Frame canvas */
     }
     .overlay-button:hover {
-      background-color: #0056b3;
+      background-color: green;
     }
   </style>
   <body>
@@ -96,52 +103,13 @@
         <a-sky color="#222"></a-sky>
       </a-entity>
 
-      <a-entity id="rig" position="10 2 0" rotation="0 90 0" >
-        <div class="overlay-text">
-          Iceland is famous for its unspoiled natural beauty. People flock to the small nordic country to see its majestic waterfalls, geysers and volcanoes as well as the hundreds of glaciers that cover more than a tenth of the island. However, there’re recent findings that indicates more frequent volcanic activities due to climate change.
-        </div>
-        <div class="overlay-button">Next</div>
-  
-          <!-- <a-entity camera look-controls wasd-controls="acceleration:60" position="0 0 0"></a-entity> -->
-
-      </a-entity>
-
+      <div class="overlay-text">Butterfly Effect</div>
+      <div class="button-container">
+        <div class="overlay-button"><a href="yiwenGood.html">Good</a></div>
+        <div class="overlay-button"><a href="yiwenNeutral.html">Neutral</a></div>
+        <div class="overlay-button"><a href="yiwenBad.html">Bad</a></div>
+      </div>
     </a-scene>
-
-    <script type="text/javascript"> 
-      document.addEventListener('DOMContentLoaded', function () {
-      var blueBox = document.getElementById('blueBox');
-      var redBox = document.getElementById('redBox');
-
-      blueBox.addEventListener('click', function () {
-        console.log('Blue box clicked!');
-        document.getElementById('bad').setAttribute('visible', 'false')
-        document.getElementById('neutral').setAttribute('visible', 'true')
-      });
-
-      redBox.addEventListener('click', function () {
-        console.log('Red box clicked!');
-        // Additional logic for when red box is clicked
-        document.getElementById('bad').setAttribute('visible', 'true')
-        document.getElementById('neutral').setAttribute('visible', 'false')
-      });
-    });
-
-      // function setSceneNeutral() {
-      //   console.log("Changing to neutral scene");
-      //   document.getElementById('bad').setAttribute('visible', 'false')
-      //   document.getElementById('neutral').setAttribute('visible', 'true')
-      // }
-      // function setSceneBad() {
-      //   console.log("Changing to bad scene");
-      //   document.getElementById('bad').setAttribute('visible', 'true')
-      //   document.getElementById('neutral').setAttribute('visible', 'false')
-      //   // document.getElementById('sceneStore').setAttribute('visible', 'false')
-      //   // document.getElementById('sceneMeeting').setAttribute('visible', 'false')
-      //   // document.getElementById('sceneHome').setAttribute('visible', 'false')
-      // }
-     
-    </script>
     
 
   </body>
