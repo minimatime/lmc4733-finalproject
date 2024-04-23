@@ -69,7 +69,7 @@
         
 d
         <a-entity id="rig" position="5.5 6.5 -23" rotation="0 170 0" >
-          <div class="overlay-text">The community thinks that developing public transportation is a waste of their tax dollars; they also are worried about the environmental cost of developing EV infrastructure. With no reason to change their lifestyle, people continue to drive personal cars, rarely use public transit, and make sure that their elected officials do not push for any change in the transit sector. Emissions remain at a steady increase that results in poor air quality and harsh environmental conditions.</div>
+          <div class="overlay-text">The community thinks that developing public transportation is a waste of their tax dollars; they also are worried about the environmental cost of developing EV infrastructure. With no reason to change their lifestyle, people continue to drive personal cars, rarely use public transit, and make sure that their elected officials do not push for any change in the transit sector. Emissions remain at a steady increase that results in poor air quality and harsh environmental conditionsgi.</div>
           <div class="button"></div>
     
             <a-entity camera look-controls wasd-controls="acceleration:60" position="0 0 0"></a-entity>
