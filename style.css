@@ -3,6 +3,7 @@
 body {
     background-color: #C1CC99;
     font-family: "Inter", sans-serif;
+    
 }
 
 .overlay-text {
@@ -12,26 +13,25 @@ body {
     font-size: 20px;
     padding: 10px 20px;
     color: white;
-    background-color:black;
     border: none;
     border-radius: 5px;
     z-index: 2;
-    background-color: rgba(0,0,0, .8);
     background-blend-mode: lighten;
     
     
 }
 .overlay-button {
-        padding: 10px 20px;
+        padding: 10px 300px;
+        margin: 40px;
         background-color: white;
         border-color: green;
-
         border-width: 3px;
         border-style: outset;
         border-radius: 5px;
         font-size: 20px;
-        cursor: pointer;
+        text-align: center;
         text-decoration: none;
+        cursor: pointer;
         z-index: 1;
     }
 
@@ -40,11 +40,23 @@ body {
     }
 
     .choices {
-        display: flex;
-        justify-content: space-between;
+        display: block;
+        justify-content: center;
         align-items: center;
     }
 
     .content {
         display: block;
+        margin: 40px 40px 40px 40px;
     }
+
+.heading {
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+    font-size: 80px;
+}
+    
