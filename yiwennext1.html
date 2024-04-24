@@ -1,11 +1,23 @@
+
+
 <html>
   <head>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-simple-sun-sky@^1.2.3/simple-sun-sky.js"></script>
+
+    
     <link rel="stylesheet" href="style.css">
   </head>
-    
+ 
   <body>
     <a-scene>
+      <a-assets>
+        <a-asset-item id="office" src="Assets/office.glb"></a-asset-item>
+        <img id="sky" src="Assets/citySky.jpg">
+      </a-assets>
+      
+          
+        <a-entity gltf-model="#office" position="0 0 0" scale="0.7 0.7 0.7"></a-entity> 
       <div class="content">
       <div class="overlay-text">Meanwhile, Trump has pulled the US out of the Paris Agreement. Critics from the public shares concerns about how the newspaper that you run is leaning towards a specific political opinion.</div>
         <div class="choices">
@@ -14,6 +26,13 @@
         <div class="overlay-button"><a href="yiwenBad.html">Revise it to just talking about the natural beauty and things people can do in Iceland.</a></div>
     </div>
 </div>
-    </a-scene>
-  </body>
+<a-sky src="#sky"></a-sky>
+<a-entity id="rig" position="50 -30 40" rotation="3 90 0" >
+<div class="button"></div>
+
+  <a-entity camera look-controls wasd-controls="acceleration:60" position="0 0 0"></a-entity>
+  
+</a-entity>
+</a-scene>
+</body>
 </html>

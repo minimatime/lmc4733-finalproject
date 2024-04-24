@@ -1,17 +1,25 @@
+
+
 <html>
   <head>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-simple-sun-sky@^1.2.3/simple-sun-sky.js"></script>
+
+    
     <link rel="stylesheet" href="style.css">
   </head>
-    
+ 
   <body>
     <a-scene>
       <a-assets>
-        <a-asset-item id="office" src="Assets/office_desk/scene.gltf"></a-asset-item>
+        <a-asset-item id="office" src="Assets/office.glb"></a-asset-item>
+        <img id="sky" src="Assets/citySky.jpg">
       </a-assets>
-      <a-entity gltf-model="#office" position="0 -30 -80" scale="0.7 0.7 0.7"></a-entity>
-      <div class="content">
-      <div class="overlay-text">It's Monday morning, and as the Editor in Chief of the nation's most influential news corporation, you arrive at your desk to find two controversial article pitches waiting for your approval. 
+      
+          
+        <a-entity gltf-model="#office" position="0 0 0" scale="0.7 0.7 0.7"></a-entity> 
+             <div class="content">
+      <div class="overlay-text">It's finally Friday, and as the Editor in Chief of the nation's most influential news corporation, you arrive at your desk to find two controversial article pitches waiting for your approval. 
 
         The first article presents a groundbreaking study on the immediate benefits of renewable energy, suggesting it could drastically reduce carbon emissions within the next decade. 
         
@@ -23,6 +31,13 @@
         <div class="overlay-button"><a href="rianext2.html">Feature the Economic Pitfalls Article.</a></div>
         </div>
 </div>
-    </a-scene>
-  </body>
+<a-sky src="#sky"></a-sky>
+<a-entity id="rig" position="50 -30 40" rotation="3 90 0" >
+<div class="button"></div>
+
+  <a-entity camera look-controls wasd-controls="acceleration:60" position="0 0 0"></a-entity>
+  
+</a-entity>
+</a-scene>
+</body>
 </html>

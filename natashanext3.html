@@ -1,17 +1,36 @@
+
+
 <html>
   <head>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-simple-sun-sky@^1.2.3/simple-sun-sky.js"></script>
+
+    
     <link rel="stylesheet" href="style.css">
   </head>
-    
+ 
   <body>
     <a-scene>
+      <a-assets>
+        <a-asset-item id="office" src="Assets/office.glb"></a-asset-item>
+        <img id="sky" src="Assets/citySky.jpg">
+      </a-assets>
+      
+          
+        <a-entity gltf-model="#office" position="0 0 0" scale="0.7 0.7 0.7"></a-entity>
       <div class="content">
       <div class="overlay-text">The article looks splendid- rich with pictures and themes. This took months of trend analysis and this will definitely be a hit among the young readers who will want to adopt these trends immediately.</div>
         <div class="choices">
         <div class="overlay-button"><a href="natasha_neutral.html">Let’s publish!</a></div>
         </div>
 </div>
+<a-sky src="#sky"></a-sky>
+      <a-entity id="rig" position="50 -30 40" rotation="3 90 0" >
+      <div class="button"></div>
+
+        <a-entity camera look-controls wasd-controls="acceleration:60" position="0 0 0"></a-entity>
+        
+      </a-entity>
     </a-scene>
   </body>
 </html>

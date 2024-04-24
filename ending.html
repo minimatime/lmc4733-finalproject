@@ -1,11 +1,43 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-simple-sun-sky@^1.2.3/simple-sun-sky.js"></script>
+
+    
     <link rel="stylesheet" href="style.css">
   </head>
-    
+ 
   <body>
+    <style>
+       .overlay-text {
+    border-color: green;
+    border-width: 3px;
+    border-style: outset;
+    border-radius: 5px;
+    margin-top: 20%
+  }
+  .endLink {
+    margin: auto;
+
+
+  }
+  .overlay-button {
+    align-self: center;
+    margin:auto;
+    z-index: 3;
+    
+
+  }
+    </style>
     <a-scene>
+      <a-assets>
+        <a-asset-item id="office" src="Assets/office.glb"></a-asset-item>
+        <img id="sky" src="Assets/citySky.jpg">
+      </a-assets>
+      
+          
+        <a-entity gltf-model="#office" position="0 0 0" scale="0.7 0.7 0.7"></a-entity>
+  
       <div class="content">
       <div class="overlay-text">Congratulations on lasting one (business) week on the job! 
         <br>
@@ -13,9 +45,19 @@
          <br><br>
          Changes are political, legislative, and global. Take action today, outside the game, to champion the cause of sustainability and climate action to do your part in saving the world. Climate change is made and experienced by people. How the future will play out is going to be shaped by choices taken by people today, and tomorrow, and the day after. 
         <br><br>
-        <a href="https://350.org/get-involved/?r=US&c=NA">Make a choice today. </a></div>
+        </div>
+        <div class="choices">
+        <div class="overlay-button"><a href="https://350.org/get-involved/?r=US&c=NA">Make a choice today. </a></div>
+        
       </div>
 </div>
-    </a-scene>
-  </body>
+<a-sky src="#sky"></a-sky>
+<a-entity id="rig" position="50 -30 40" rotation="3 90 0" >
+<div class="button"></div>
+
+  <a-entity camera look-controls wasd-controls="acceleration:60" position="0 0 0"></a-entity>
+  
+</a-entity>
+</a-scene>
+</body>
 </html>

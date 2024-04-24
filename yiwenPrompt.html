@@ -1,23 +1,37 @@
+
 <html>
   <head>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-simple-sun-sky@^1.2.3/simple-sun-sky.js"></script>
+
+    
     <link rel="stylesheet" href="style.css">
   </head>
-    
+ 
   <body>
     <a-scene>
       <a-assets>
-        <a-asset-item id="office" src="Assets/office_desk/scene.gltf"></a-asset-item>
+        <a-asset-item id="office" src="Assets/office.glb"></a-asset-item>
+        <img id="sky" src="Assets/citySky.jpg">
       </a-assets>
-      <a-entity gltf-model="#office" position="0 -30 -80" scale="0.7 0.7 0.7"></a-entity>
-      <div class="content">
-      <div class="overlay-text">Iceland is famous for its unspoiled natural beauty. People flock to the small nordic country to see its majestic waterfalls, geysers and volcanoes as well as the hundreds of glaciers that cover more than a tenth of the island. However, there’re recent findings that indicates more frequent volcanic activities due to climate change.</div>
-        <div class="choices">
-        <div class="overlay-button"><a href="yiwennext1.html">Write about climate change and how it would make Iceland disappear while it would influence other parts of the world.</a></div>
-        <div class="overlay-button"><a href="yiwennext2.html">Write about how Iceland is about to disappear so people who wants to visit should go ASAP.</a></div>
-        <div class="overlay-button"><a href="yiwennext3.html">Write about the natural beauty of Iceland and places people can go to visit.</a></div>
+      
+          
+        <a-entity gltf-model="#office" position="0 0 0" scale="0.7 0.7 0.7"></a-entity>
+        <div class="content">
+          <div class="overlay-text">Iceland is famous for its unspoiled natural beauty. People flock to the small nordic country to see its majestic waterfalls, geysers and volcanoes as well as the hundreds of glaciers that cover more than a tenth of the island. However, there’re recent findings that indicates more frequent volcanic activities due to climate change.</div>
+            <div class="choices">
+            <div class="overlay-button"><a href="yiwennext1.html">Write about climate change and how it would make Iceland disappear while it would influence other parts of the world.</a></div>
+            <div class="overlay-button"><a href="yiwennext2.html">Write about how Iceland is about to disappear so people who wants to visit should go ASAP.</a></div>
+            <div class="overlay-button"><a href="yiwennext3.html">Write about the natural beauty of Iceland and places people can go to visit.</a></div>
+        </div>
     </div>
-</div>
+      <a-sky src="#sky"></a-sky>
+      <a-entity id="rig" position="50 -30 40" rotation="3 90 0" >
+      <div class="button"></div>
+
+        <a-entity camera look-controls wasd-controls="acceleration:60" position="0 0 0"></a-entity>
+        
+      </a-entity>
     </a-scene>
   </body>
 </html>

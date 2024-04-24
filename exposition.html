@@ -1,16 +1,71 @@
+
+
 <html>
   <head>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-  </head>
+    <script src="https://unpkg.com/aframe-simple-sun-sky@^1.2.3/simple-sun-sky.js"></script>
+
     
+    <link rel="stylesheet" href="style.css">
+    
+  </head>
+ <style>
+  .overlay-button {
+    align-self: center;
+    margin-left: 41%;
+    
+    
+  }
+  .overlay-text {
+    border-color: green;
+    border-width: 3px;
+    border-style: outset;
+    border-radius: 5px;
+  }
+  .titleText {
+    font-size: 40pt;
+    font-weight: 700;
+    border: 2px;
+    border-color: white;
+    margin-top: 250px;
+    
+    position: relative;
+   
+
+    text-align: center;
+    vertical-align: middle;
+    
+    
+    
+    padding: 10px;
+    
+    
+   
+    font-size: 50px;
+    
+    color: black;
+    
+   
+  
+    z-index: 1;
+
+  }
+ </style>
   <body>
     <a-scene>
+      <a-assets>
+        <a-asset-item id="office" src="Assets/office.glb"></a-asset-item>
+        <img id="sky" src="Assets/citySky.jpg">
+      </a-assets>
+      
+          
+        <a-entity gltf-model="#office" position="0 0 0" scale="0.7 0.7 0.7"></a-entity>
       <div class="content">
-      <div class="overlay-text">This is The Butterfly Effect. 
+        <div class="titleText">Welcome to The Butterfly Effect</div>
+      <div class="overlay-text">
 
-        <br> Here, you are the senior editor-in-chief at the world's most influential newspaper agency. Hundreds of readers start the day with the stories you and your team cover. Your reach spans oceans and continents,   and your paper covers everything from policy to trends and more. 
-         <br>
+        You are the senior editor-in-chief at the world's most influential newspaper agency. Hundreds of readers start the day with the stories you and your team cover. Your reach spans oceans and continents,   and your paper covers everything from policy to trends and more. 
+         
          <br> Given the power you have over publishing media that influences masses, there is a lot of responsibility on your shoulders. Every day on the job counts, every decision you make matters.
         <br>
          <br> Can you withstand and wield the power of making crucial, sustainable change while maintaining your readership?</div>
@@ -18,6 +73,13 @@
         <div class="overlay-button"><a href="hemadriPrompt.html">Let's begin!</a></div>
         </div>
 </div>
+<a-sky src="#sky"></a-sky>
+      <a-entity id="rig" position="50 -30 40" rotation="3 90 0" >
+      <div class="button"></div>
+
+        <a-entity camera look-controls wasd-controls="acceleration:60" position="0 0 0"></a-entity>
+        
+      </a-entity>
     </a-scene>
   </body>
 </html>
