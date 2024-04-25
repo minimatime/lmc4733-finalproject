@@ -57,13 +57,13 @@
         <a-assets>
             <img id="skyTexture" src="assets/city_graph/4733_city_background.jpeg">
             <img id="hudImage" src="assets/city_graph/graph_image_3.png"> <!-- Update the path to your HUD image -->
-            <a-asset-item id="myCity" src="assets/city_graph/scene.gltf"></a-asset-item>
+            <a-asset-item id="myCity" src="assets/cyberpunk_city_-_1/scene.gltf"></a-asset-item>
         </a-assets>
 
         <a-sky src="#skyTexture" radius="5000"></a-sky>
 
         <!-- Entity to display the GLTF model -->
-        <a-entity gltf-model="#myCity" animation-mixer position="0 0 -5" rotation="0 45 0" scale="0.5 0.5 0.5"></a-entity>
+        <a-entity gltf-model="#myCity" animation-mixer position="0 0 -5" rotation="0 45 0" scale="100 100 100"></a-entity>
 
         <!-- Camera with look-controls enabled and wasd-controls enabled for movement -->
         <a-camera position="60 60 350" look-controls="true" wasd-controls-enabled="true">
